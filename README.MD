@@ -38,7 +38,7 @@ Commands follow a human-native structure. For example, to list all custom models
 
 ### Further development
 
-List of core functionality that is due to be implemented in the future:
+List of core functionality that is currently in progress:
 
 - API server for interacting with custom models
 - Cost calculation
@@ -48,6 +48,10 @@ List of core functionality that is due to be implemented in the future:
 - Add organization support
 - Error handling and input serialization
 - Moderation module for user input to prevent hateful, offensive, or other content that violates the terms of service
+
+## Disclaimer
+
+Trainify is in early stages of development and works only with correct syntax. Most functions will output the entire response from the OpenAI API. This is to make it easier to debug and understand the API. In the future, this will be changed to a more user-friendly output. Furthermore, the code is not optimized and will be improved in the future. At the moment, the focus is on functionality.
 
 ## Setup
 
@@ -103,7 +107,7 @@ This software uses the following technologies:
 
 GNU General Public License v3.0
 
----
+## Author
 
 > [swafox.com](https://www.swafox.com) &nbsp;&middot;&nbsp;
 > GitHub [@Swafox](https://github.com/Swafox) &nbsp;&middot;&nbsp;
