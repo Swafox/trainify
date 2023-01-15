@@ -71,6 +71,8 @@ trainify init
 
 ## Usage
 
+Add `deno run --allow-all` before every command. E.g.: `deno run --allow-all trainify.ts help`
+
 ### Models
 
 ```bash
