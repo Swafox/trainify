@@ -12,7 +12,7 @@ const openai = new OpenAIApi(configuration);
 async function createFineTune(id: string) {
   const response = await openai.createFineTune({
     training_file: id,
-    model: "text-davinci-003",
+    model: "gpt-3.5-turbo",
   });
   return response;
 }
