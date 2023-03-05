@@ -1,0 +1,25 @@
+{
+  "name": "traninify-upload",
+  "version": "1.0.0",
+  "description": "OpenAPI file upload wrapper for trainify",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./test",
+    "build": "tsc -p .",
+    "refresh": "rm -rf ./node_modules && npm install"
+  },
+  "keywords": [
+    "trainify"
+  ],
+  "author": "Swafox",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "openai": "^3.2.1",
+    "process": "^0.11.10"
+  }
+}
