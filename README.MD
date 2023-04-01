@@ -93,6 +93,13 @@ trainify list files # List all files
 trainify get file <file_id> # Get information about a file
 ```
 
+### Utility
+```
+trainify help # Show help
+trainify version # Show version
+trainify config # Show current config
+```
+
 ## Release
 
 Trainify will be shipped as a standalone tool as soon as Deno [adds support for npm specifier compiling](https://github.com/denoland/deno/issues/15960).

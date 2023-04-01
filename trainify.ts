@@ -98,34 +98,6 @@ if (Deno.args[0] === "cancel") {
   }
 }
 
-if (Deno.args[0] === "create") {
-  if (Deno.args[1] === "file") {
-    const response = await retrieveFileContent(Deno.args[2]);
-    console.log(response);
-  }
-}
-
-if (Deno.args[0] === "help") {
-  console.log(
-    neutral +
-      "Trainify is a command line tool for training OpenAI models.\n\n" +
-      neutral +
-      "Usage:\n" +
-      "  trainify init\n" +
-      "  trainify create file <id>\n" +
-      "  trainify list files\n" +
-      "  trainify list models\n" +
-      "  trainify get file <id>\n" +
-      "  trainify get model <id>\n" +
-      "  trainify cancel model <id>\n" +
-      "  trainify delete file <id>\n" +
-      "  trainify delete model <id>\n" +
-      "  trainify help\n\n" +
-      "  help     Show this screen.\n" +
-      "  version     Show version.\n"
-  );
-}
-
 if (Deno.args[0] === "ask") {
   console.log(
     neutral + `Asking ${Deno.args[1]}: ${Deno.args.slice(2).join(" ")}...`
@@ -152,4 +124,25 @@ if (Deno.args[0] === "config") {
 
 if (Deno.args[0] === "version") {
   console.log(neutral + "Trainify v0.1.0 alpha");
+}
+
+if (Deno.args[0] === "help") {
+  console.log(
+    neutral +
+    "Trainify is a command line tool for training OpenAI models.\n\n" +
+    neutral +
+    "Usage:\n" +
+    "  trainify init\n" +
+    "  trainify create file <id>\n" +
+    "  trainify list files\n" +
+    "  trainify list models\n" +
+    "  trainify get file <id>\n" +
+    "  trainify get model <id>\n" +
+    "  trainify cancel model <id>\n" +
+    "  trainify delete file <id>\n" +
+    "  trainify delete model <id>\n" +
+    "  trainify help\n\n" +
+    "  help     Show this screen.\n" +
+    "  version     Show version.\n"
+  );
 }
