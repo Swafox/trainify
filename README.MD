@@ -78,7 +78,6 @@ Add `deno run --allow-all` before every command. E.g.: `deno run --allow-all tra
 ```bash
 trainify list models # List all custom models
 trainify create <file_id> # Create a new model with a training file
-trainify delete model <file_id> # Delete a model
 trainify get model <id> # Get information about a custom model
 trainify cancel <id> # Cancel a model training
 trainify ask <name> <prompt> # Ask a question to the custom model
@@ -87,7 +86,7 @@ trainify ask <name> <prompt> # Ask a question to the custom model
 ### Files
 
 ```bash
-trainify upload <file_path> # !! Does not work yet
+trainify upload <file_path> # Upload a file to OpenAI
 trainify delete file <file_id> # Delete a file
 trainify list files # List all files
 trainify get file <file_id> # Get information about a file

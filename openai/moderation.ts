@@ -1,18 +1,13 @@
 import { load } from "https://deno.land/std@0.170.0/dotenv/mod.ts";
-import { Configuration, OpenAIApi } from "npm:openai";
+import { OpenAI } from "https://deno.land/x/openai@1.3.0/mod.ts";
 
 const configData: Record<string, string> = await load();
 const apiKey: string = configData["OPENAI_API_KEY"];
 
-const configuration = new Configuration({
-  apiKey: apiKey,
-});
-const openai = new OpenAIApi(configuration);
+const openAI = new OpenAI(apiKey);
 
 async function moderation(prompt: string) {
-  const response = await openai.createModeration({
-    input: prompt,
-  });
+  const response = await openAI.createModeration(prompt);
   return response;
 }
 

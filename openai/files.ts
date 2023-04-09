@@ -1,32 +1,29 @@
 import { load } from "https://deno.land/std@0.170.0/dotenv/mod.ts";
-import { Configuration, OpenAIApi } from "npm:openai";
+import { OpenAI } from "https://deno.land/x/openai@1.3.0/mod.ts";
 
 const configData: Record<string, string> = await load();
 const apiKey: string = configData["OPENAI_API_KEY"];
 
-const configuration = new Configuration({
-  apiKey: apiKey,
-});
-const openai = new OpenAIApi(configuration);
+const openAI = new OpenAI(apiKey);
+
+async function uploadFile(file: string) {
+  const response = await openAI.uploadFile(file, "fine-tune");
+  return response;
+}
 
 async function listFiles() {
-  const response = await openai.listFiles();
+  const response = await openAI.listFiles();
   return response;
 }
 
 async function deleteFile(id: string) {
-  const response = await openai.deleteFile(id);
+  const response = await openAI.deleteFile(id);
   return response;
 }
 
 async function retrieveFile(id: string) {
-  const response = await openai.retrieveFile(id);
+  const response = await openAI.retrieveFile(id);
   return response;
 }
 
-async function retrieveFileContent(id: string) {
-  const response = await openai.downloadFile(id);
-  return response;
-}
-
-export { listFiles, deleteFile, retrieveFile, retrieveFileContent };
+export { uploadFile, listFiles, deleteFile, retrieveFile };

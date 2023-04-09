@@ -1,16 +1,15 @@
 import { load } from "https://deno.land/std@0.170.0/dotenv/mod.ts";
 import { positive, error, warning, neutral } from "./console/response.ts";
 import {
+  uploadFile,
   listFiles,
   deleteFile,
   retrieveFile,
-  retrieveFileContent,
 } from "./openai/files.ts";
 import {
   listFineTunes,
   retrieveFineTune,
   cancelFineTune,
-  deleteFineTune,
   askFineTune,
 } from "./openai/finetune.ts";
 
@@ -56,13 +55,14 @@ if (Deno.args[0] === "init") {
   );
 }
 
+if (Deno.args[0] === "upload") {
+  const response = await uploadFile(Deno.args[1]);
+  console.log(response);
+}
+
 if (Deno.args[0] === "delete") {
   if (Deno.args[1] === "file") {
     const response = await deleteFile(Deno.args[2]);
-    console.log(response);
-  }
-  if (Deno.args[1] === "model") {
-    const response = await deleteFineTune(Deno.args[2]);
     console.log(response);
   }
 }
@@ -82,12 +82,12 @@ if (Deno.args[0] === "get") {
   if (Deno.args[1] === "file") {
     const response = await retrieveFile(Deno.args[2]);
     console.log(positive + "File info:\n");
-    console.log(response["data"]);
+    console.log(response);
   }
 
   if (Deno.args[1] === "model") {
     const response = await retrieveFineTune(Deno.args[2]);
-    console.log(response["data"]);
+    console.log(response);
   }
 }
 
@@ -106,7 +106,7 @@ if (Deno.args[0] === "ask") {
     Deno.args[1],
     Deno.args.slice(2).join(" ")
   );
-  const text: string | undefined = response["data"]["choices"][0]["text"];
+  const text: string | undefined = response.choices[0].text;
   if (typeof text === "undefined") {
     console.log(error + "No response received.");
     Deno.exit(1);
