@@ -101,7 +101,11 @@ trainify config # Show current config
 
 ## Release
 
-Trainify will be shipped as a standalone tool as soon as Deno [adds support for npm specifier compiling](https://github.com/denoland/deno/issues/15960).
+Run the following command to build the project:
+
+```bash
+deno compile trainify.ts
+```
 
 ## Credits
 
