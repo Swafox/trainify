@@ -14,7 +14,7 @@
          alt="Typescript">
   </a>
   <a href="https://badgen.net/badge/icon/terminal?icon=terminal&label"><img src="https://badgen.net/badge/icon/terminal?icon=terminal&label"></a>
-  <a><img src="https://img.shields.io/badge/version-v0.1.0%20alpha-red"></a>
+  <a><img src="https://img.shields.io/badge/version-v0.1.5%20alpha-red"></a>
 </p>
 
 <p align="center">
@@ -93,7 +93,8 @@ trainify get file <file_id> # Get information about a file
 ```
 
 ### Utility
-```
+
+```bash
 trainify help # Show help
 trainify version # Show version
 trainify config # Show current config
